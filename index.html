@@ -1,0 +1,3409 @@
+<!DOCTYPE html>
+
+<html lang="ja">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+
+      content="width=device-width, initial-scale=1.0">
+
+<title>電験実務トレーニング</title>
+
+<style>
+
+/* =========================
+
+   基本
+
+========================= */
+
+*{
+
+  box-sizing:border-box;
+
+}
+
+body{
+
+  margin:0;
+
+  font-family:
+
+    -apple-system,
+
+    BlinkMacSystemFont,
+
+    "Hiragino Kaku Gothic ProN",
+
+    "Yu Gothic",
+
+    sans-serif;
+
+  background:#f4f7fb;
+
+  color:#172033;
+
+  line-height:1.7;
+
+}
+
+header{
+
+  background:#0d47a1;
+
+  color:white;
+
+  padding:18px 15px;
+
+  text-align:center;
+
+  position:sticky;
+
+  top:0;
+
+  z-index:100;
+
+}
+
+header h1{
+
+  margin:0;
+
+  font-size:21px;
+
+}
+
+main{
+
+  max-width:760px;
+
+  margin:0 auto;
+
+  padding:16px;
+
+}
+
+section{
+
+  margin-bottom:25px;
+
+}
+
+.hidden{
+
+  display:none !important;
+
+}
+
+/* =========================
+
+   カード
+
+========================= */
+
+.card{
+
+  background:white;
+
+  border-radius:14px;
+
+  padding:18px;
+
+  margin-bottom:14px;
+
+  box-shadow:
+
+    0 2px 9px rgba(0,0,0,0.08);
+
+}
+
+h2{
+
+  margin-top:0;
+
+  font-size:21px;
+
+  color:#123d73;
+
+}
+
+h3{
+
+  margin-top:24px;
+
+  color:#0d47a1;
+
+  font-size:18px;
+
+}
+
+h4{
+
+  margin-bottom:5px;
+
+}
+
+p{
+
+  margin:8px 0;
+
+}
+
+.small{
+
+  color:#657080;
+
+  font-size:13px;
+
+}
+
+/* =========================
+
+   ボタン
+
+========================= */
+
+button{
+
+  width:100%;
+
+  border:0;
+
+  border-radius:12px;
+
+  padding:14px;
+
+  margin:6px 0;
+
+  font-size:16px;
+
+  font-weight:bold;
+
+  color:white;
+
+  background:#1565c0;
+
+  cursor:pointer;
+
+}
+
+button:active{
+
+  transform:scale(0.98);
+
+}
+
+button.secondary{
+
+  background:#607d8b;
+
+}
+
+button.green{
+
+  background:#2e7d32;
+
+}
+
+button.orange{
+
+  background:#ef6c00;
+
+}
+
+/* =========================
+
+   知識一覧
+
+========================= */
+
+.knowledge-item{
+
+  background:white;
+
+  border:1px solid #d9e1ec;
+
+  border-radius:12px;
+
+  padding:15px;
+
+  margin:9px 0;
+
+}
+
+.knowledge-item h3{
+
+  margin:0 0 5px 0;
+
+}
+
+.knowledge-link{
+
+  border:2px solid #1976d2;
+
+  cursor:pointer;
+
+}
+
+.knowledge-link:active{
+
+  background:#eef6ff;
+
+}
+
+.tag{
+
+  display:inline-block;
+
+  background:#e8eef8;
+
+  color:#164a83;
+
+  border-radius:20px;
+
+  padding:3px 9px;
+
+  font-size:12px;
+
+  margin-top:5px;
+
+}
+
+/* =========================
+
+   注意
+
+========================= */
+
+.notice{
+
+  background:#fff8e1;
+
+  border-left:5px solid #ffb300;
+
+  border-radius:8px;
+
+  padding:12px;
+
+  margin:12px 0;
+
+}
+
+.warning{
+
+  background:#ffebee;
+
+  border-left:5px solid #c62828;
+
+  border-radius:8px;
+
+  padding:12px;
+
+  margin:12px 0;
+
+}
+
+.point{
+
+  background:#e3f2fd;
+
+  border-left:5px solid #1976d2;
+
+  border-radius:8px;
+
+  padding:12px;
+
+  margin:12px 0;
+
+}
+
+/* =========================
+
+   電気の流れ
+
+========================= */
+
+.flow{
+
+  display:flex;
+
+  flex-wrap:wrap;
+
+  align-items:center;
+
+  justify-content:center;
+
+  gap:7px;
+
+  margin:15px 0;
+
+}
+
+.flow-box{
+
+  background:#e3f2fd;
+
+  border:2px solid #1976d2;
+
+  border-radius:10px;
+
+  padding:9px 11px;
+
+  text-align:center;
+
+  font-weight:bold;
+
+}
+
+.arrow{
+
+  font-size:20px;
+
+  font-weight:bold;
+
+}
+
+/* =========================
+
+   変圧器図
+
+========================= */
+
+.transformer-diagram{
+
+  background:#f8fafc;
+
+  border:1px solid #d9e1ec;
+
+  border-radius:12px;
+
+  padding:16px;
+
+  margin:15px 0;
+
+  text-align:center;
+
+}
+
+.coil-area{
+
+  display:flex;
+
+  justify-content:center;
+
+  align-items:center;
+
+  gap:25px;
+
+  margin:15px 0;
+
+}
+
+.coil{
+
+  width:90px;
+
+  height:100px;
+
+  border:4px solid #555;
+
+  border-radius:45%;
+
+  display:flex;
+
+  flex-direction:column;
+
+  justify-content:center;
+
+  align-items:center;
+
+  font-weight:bold;
+
+}
+
+.core{
+
+  width:45px;
+
+  height:110px;
+
+  border-left:7px solid #777;
+
+  border-right:7px solid #777;
+
+}
+
+/* =========================
+
+   表
+
+========================= */
+
+.table-wrap{
+
+  overflow-x:auto;
+
+}
+
+table{
+
+  width:100%;
+
+  border-collapse:collapse;
+
+  background:white;
+
+}
+
+th,
+
+td{
+
+  border:1px solid #d8dee8;
+
+  padding:9px;
+
+  text-align:left;
+
+  vertical-align:top;
+
+}
+
+th{
+
+  background:#eef4fb;
+
+}
+
+/* =========================
+
+   クイズ
+
+========================= */
+
+.choice-button{
+
+  text-align:left;
+
+  background:#1565c0;
+
+}
+
+.choice-button.correct{
+
+  background:#2e7d32;
+
+}
+
+.choice-button.wrong{
+
+  background:#c62828;
+
+}
+
+.result-score{
+
+  font-size:32px;
+
+  font-weight:bold;
+
+  text-align:center;
+
+  color:#0d47a1;
+
+}
+
+/* =========================
+
+   レスポンシブ
+
+========================= */
+
+@media(max-width:520px){
+
+  main{
+
+    padding:12px;
+
+  }
+
+  .flow{
+
+    flex-direction:column;
+
+  }
+
+  .arrow{
+
+    transform:rotate(90deg);
+
+  }
+
+  .coil-area{
+
+    gap:10px;
+
+  }
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<header>
+
+<h1>⚡ 電験実務トレーニング</h1>
+
+</header>
+
+<main>
+
+<!-- ==================================================
+
+     ホーム
+
+================================================== -->
+
+<section id="home">
+
+<div class="card">
+
+<h2>電験三種合格後の「実務につなげる」ための学習サイト</h2>
+
+<p>
+
+電験三種で学んだ知識を、
+
+実際の電気設備の保安・点検・管理業務につなげるための
+
+実務トレーニングです。
+
+</p>
+
+<p class="small">
+
+※実際の業務では、各設備の仕様書、保安規程、メーカー基準、
+
+法令および所属事業場の手順等を優先してください。
+
+</p>
+
+<button
+
+type="button"
+
+onclick="showSection('knowledge')">
+
+📚 知識編
+
+</button>
+
+<button
+
+type="button"
+
+onclick="showSection('formula')">
+
+🧮 最低限の計算・公式
+
+</button>
+
+<button
+
+type="button"
+
+onclick="startQuiz()">
+
+📝 確認問題
+
+</button>
+
+<button
+
+type="button"
+
+onclick="showSection('simulation')">
+
+🏭 実務シミュレーション
+
+</button>
+
+</div>
+
+</section>
+
+<!-- ==================================================
+
+     知識一覧
+
+================================================== -->
+
+<section id="knowledge" class="hidden">
+
+<button
+
+type="button"
+
+class="secondary"
+
+onclick="showSection('home')">
+
+← ホームへ戻る
+
+</button>
+
+<div class="card">
+
+<h2>📚 知識編</h2>
+
+<p>
+
+電験実務でまず押さえておきたい設備・知識を、
+
+現場での見方を意識して整理しています。
+
+</p>
+
+<!-- 1 -->
+
+<div
+
+class="knowledge-item knowledge-link"
+
+onclick="showSection('knowledgeDetail')">
+
+<h3>1．受変電設備 ⚡</h3>
+
+<p>
+
+電力会社から受けた電気を、
+
+工場・ビルなどで安全かつ適切に使用するための設備。
+
+</p>
+
+<span class="tag">
+
+タップして図解＋実務ポイントを見る
+
+</span>
+
+</div>
+
+<!-- 2 -->
+
+<div
+
+class="knowledge-item knowledge-link"
+
+onclick="showSection('transformerDetail')">
+
+<h3>2．変圧器</h3>
+
+<p>
+
+電圧を別の電圧へ変換する設備。
+
+温度、異音、振動、油漏れ、絶縁状態などを確認する。
+
+</p>
+
+<span class="tag">
+
+タップして変圧器を詳しく学ぶ
+
+</span>
+
+</div>
+
+<!-- 3 -->
+
+<div class="knowledge-item">
+
+<h3>3．遮断器・開閉器</h3>
+
+<p>
+
+電路の開閉や事故電流の遮断を行う。
+
+それぞれの役割の違いを理解する。
+
+</p>
+
+</div>
+
+<!-- 4 -->
+
+<div class="knowledge-item">
+
+<h3>4．保護リレー</h3>
+
+<p>
+
+過電流、地絡、短絡などの異常を検出し、
+
+必要に応じて遮断器へトリップ信号を送る。
+
+</p>
+
+</div>
+
+<!-- 5 -->
+
+<div class="knowledge-item">
+
+<h3>5．CT・VT</h3>
+
+<p>
+
+大電流・高電圧を測定や保護に利用しやすい値へ変換する。
+
+</p>
+
+</div>
+
+<!-- 6 -->
+
+<div class="knowledge-item">
+
+<h3>6．電動機・モーター</h3>
+
+<p>
+
+電流、温度、振動、異音、絶縁などを確認し、
+
+異常の早期発見につなげる。
+
+</p>
+
+</div>
+
+<!-- 7 -->
+
+<div class="knowledge-item">
+
+<h3>7．絶縁</h3>
+
+<p>
+
+電気が本来流れるべきでない場所へ流れないようにする。
+
+絶縁抵抗測定などで状態を確認する。
+
+</p>
+
+</div>
+
+<!-- 8 -->
+
+<div class="knowledge-item">
+
+<h3>8．接地</h3>
+
+<p>
+
+漏電や故障時の電流を安全に大地へ流し、
+
+感電や設備事故の危険を低減する。
+
+</p>
+
+</div>
+
+<!-- 9 -->
+
+<div class="knowledge-item">
+
+<h3>9．測定・点検</h3>
+
+<p>
+
+電圧、電流、絶縁抵抗、接地抵抗、温度などを確認し、
+
+設備の状態を把握する。
+
+</p>
+
+</div>
+
+<!-- 10 -->
+
+<div class="knowledge-item">
+
+<h3>10．保全</h3>
+
+<p>
+
+故障してから直すだけではなく、
+
+状態を把握して異常の早期発見・予防につなげる。
+
+</p>
+
+</div>
+
+<!-- 11 -->
+
+<div class="knowledge-item">
+
+<h3>11．安全管理</h3>
+
+<p>
+
+停電、検電、接地、立入範囲、作業手順などを確認し、
+
+電気事故を防止する。
+
+</p>
+
+</div>
+
+<!-- 12 -->
+
+<div class="knowledge-item">
+
+<h3>12．主任技術者実務</h3>
+
+<p>
+
+設備の保安を維持するため、
+
+点検・記録・判断・改善・関係者との調整などを行う。
+
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ==================================================
+
+     ① 受変電設備
+
+================================================== -->
+
+<section id="knowledgeDetail" class="hidden">
+
+<button
+
+type="button"
+
+class="secondary"
+
+onclick="showSection('knowledge')">
+
+← 知識編へ戻る
+
+</button>
+
+<div class="card">
+
+<h2>① 受変電設備 ⚡</h2>
+
+<p>
+
+受変電設備とは、電力会社などから受けた電気を、
+
+工場・ビルなどの施設で安全かつ適切に使用できるようにする設備です。
+
+</p>
+
+<div class="point">
+
+<strong>主任技術者の実務で重要：</strong>
+
+「電気がどこから入り、どの設備を通って、
+
+どこへ供給されているのか」を把握する。
+
+</div>
+
+<h3>🔌 電気の流れ</h3>
+
+<div class="flow">
+
+<div class="flow-box">
+
+電力会社
+
+<br>
+
+高圧・特別高圧
+
+</div>
+
+<div class="arrow">→</div>
+
+<div class="flow-box">
+
+受電設備
+
+</div>
+
+<div class="arrow">→</div>
+
+<div class="flow-box">
+
+断路器
+
+</div>
+
+<div class="arrow">→</div>
+
+<div class="flow-box">
+
+遮断器
+
+</div>
+
+<div class="arrow">→</div>
+
+<div class="flow-box">
+
+変圧器
+
+</div>
+
+<div class="arrow">→</div>
+
+<div class="flow-box">
+
+配電盤
+
+</div>
+
+<div class="arrow">→</div>
+
+<div class="flow-box">
+
+負荷設備
+
+</div>
+
+</div>
+
+<h3>① 受電設備</h3>
+
+<p>
+
+電力会社から電気を受け取る入口部分です。
+
+断路器、遮断器、CT、VT、保護リレーなどが組み合わされています。
+
+</p>
+
+<h3>② 断路器</h3>
+
+<p>
+
+回路を切り離して、
+
+設備を安全に点検・作業できる状態にするための機器です。
+
+</p>
+
+<div class="warning">
+
+断路器は原則として、
+
+負荷電流を遮断するための機器ではありません。
+
+遮断器とは役割が違います。
+
+</div>
+
+<h3>③ 遮断器</h3>
+
+<p>
+
+通常の開閉だけでなく、
+
+短絡・地絡などによって発生する異常電流を遮断します。
+
+</p>
+
+<h3>④ 保護リレー</h3>
+
+<p>
+
+設備の異常を検出して、
+
+遮断器などを動作させるための信号を出します。
+
+</p>
+
+<div class="transformer-diagram">
+
+CT・VT
+
+<br>
+
+↓
+
+<br>
+
+保護リレー
+
+<br>
+
+↓
+
+<br>
+
+遮断器
+
+</div>
+
+<h3>⑤ CT・VT</h3>
+
+<ul>
+
+<li>
+
+CT：大きな電流を測定・保護に利用しやすい値へ変換
+
+</li>
+
+<li>
+
+VT：高い電圧を測定・保護に利用しやすい値へ変換
+
+</li>
+
+</ul>
+
+<h3>⑥ 変圧器</h3>
+
+<p>
+
+電圧を別の電圧へ変換する設備です。
+
+詳しくは次の「変圧器編」で学習します。
+
+</p>
+
+<button
+
+type="button"
+
+onclick="showSection('transformerDetail')">
+
+⚡ 変圧器を詳しく学ぶ →
+
+</button>
+
+<h3>👀 主任技術者が設備を見る視点</h3>
+
+<ul>
+
+<li>電気的：電圧・電流・電力・力率</li>
+
+<li>熱的：温度上昇・過熱</li>
+
+<li>機械的：振動・異音・動作状態</li>
+
+<li>絶縁：絶縁抵抗・漏電</li>
+
+<li>外観：変色・腐食・汚れ・油漏れ・異臭</li>
+
+</ul>
+
+<h3>📈 数値だけでなく「変化」を見る</h3>
+
+<p>
+
+実務では、
+
+現在の数値だけではなく過去のデータとの比較が重要です。
+
+</p>
+
+<p>
+
+例えば、
+
+</p>
+
+<p>
+
+昨年：絶縁抵抗 200MΩ
+
+<br>
+
+↓
+
+<br>
+
+今年：絶縁抵抗 80MΩ
+
+</p>
+
+<p>
+
+80MΩという値だけを見れば問題ない場合でも、
+
+大きく低下しているなら
+
+「なぜ下がったのか」を確認する価値があります。
+
+</p>
+
+<h3>🚨 異常を発見したとき</h3>
+
+<div class="flow">
+
+<div class="flow-box">
+
+① 安全確保
+
+</div>
+
+<div class="arrow">→</div>
+
+<div class="flow-box">
+
+② 情報収集
+
+</div>
+
+<div class="arrow">→</div>
+
+<div class="flow-box">
+
+③ 原因・範囲確認
+
+</div>
+
+<div class="arrow">→</div>
+
+<div class="flow-box">
+
+④ リスク判断
+
+</div>
+
+<div class="arrow">→</div>
+
+<div class="flow-box">
+
+⑤ 対応・報告
+
+</div>
+
+</div>
+
+<div class="warning">
+
+異常の原因を確認したいからといって、
+
+無理に接近したり充電部へ触れたりしてはいけません。
+
+実際の現場では、
+
+所属事業場の保安規程・作業手順を優先します。
+
+</div>
+
+<h3>✅ 最低限覚えること</h3>
+
+<ul>
+
+<li>電気の流れを説明できる</li>
+
+<li>断路器と遮断器の違いを説明できる</li>
+
+<li>保護リレーの役割を説明できる</li>
+
+<li>CT・VTの役割を説明できる</li>
+
+<li>変圧器の異常兆候を挙げられる</li>
+
+<li>数値だけではなく過去との変化を見る</li>
+
+<li>異常時は安全確保を最優先にする</li>
+
+</ul>
+
+</div>
+
+</section>
+
+<!-- ==================================================
+
+     ② 変圧器 詳細
+
+================================================== -->
+
+<section id="transformerDetail" class="hidden">
+
+<button
+
+type="button"
+
+class="secondary"
+
+onclick="showSection('knowledge')">
+
+← 知識編へ戻る
+
+</button>
+
+<div class="card">
+
+<h2>② 変圧器 ⚡</h2>
+
+<div class="point">
+
+<strong>この章の目的：</strong>
+
+電験三種で学んだ「変圧器」を、
+
+実際の工場・受変電設備で
+
+「何を見るのか」「異常をどう考えるのか」
+
+までつなげます。
+
+</div>
+
+<h3>① 変圧器は何をしている？</h3>
+
+<p>
+
+変圧器は、
+
+交流電圧を別の電圧へ変換する設備です。
+
+</p>
+
+<p>
+
+工場などでは、
+
+電力会社から受電した高圧電力を、
+
+実際に使用する設備に適した電圧へ変換するために使用します。
+
+</p>
+
+<div class="transformer-diagram">
+
+<div class="flow">
+
+<div class="flow-box">
+
+高圧側
+
+<br>
+
+一次側
+
+</div>
+
+<div class="arrow">→</div>
+
+<div class="flow-box">
+
+変圧器
+
+</div>
+
+<div class="arrow">→</div>
+
+<div class="flow-box">
+
+低圧側
+
+<br>
+
+二次側
+
+</div>
+
+</div>
+
+</div>
+
+<h3>② 電験三種の知識と実務をつなげる</h3>
+
+<p>
+
+電験では、
+
+「巻数比」「電圧比」「電流比」「損失」「効率」
+
+などを学びます。
+
+</p>
+
+<p>
+
+実務では、それを
+
+<strong>「この変圧器が正常に仕事をしているか」</strong>
+
+を見るために使います。
+
+</p>
+
+<h3>③ 一次側と二次側</h3>
+
+<div class="table-wrap">
+
+<table>
+
+<tr>
+
+<th>項目</th>
+
+<th>一次側</th>
+
+<th>二次側</th>
+
+</tr>
+
+<tr>
+
+<td>意味</td>
+
+<td>電源側</td>
+
+<td>負荷側</td>
+
+</tr>
+
+<tr>
+
+<td>電圧</td>
+
+<td>変圧器へ入力される側</td>
+
+<td>変圧後の電圧</td>
+
+</tr>
+
+<tr>
+
+<td>役割</td>
+
+<td>電力を受ける</td>
+
+<td>負荷へ供給する</td>
+
+</tr>
+
+</table>
+
+</div>
+
+<div class="notice">
+
+実際の設備では、
+
+一次・二次の電圧値や結線方式は
+
+設備仕様書・銘板などで確認します。
+
+</div>
+
+<h3>④ 巻数比と電圧</h3>
+
+<p>
+
+理想変圧器では、
+
+</p>
+
+<p>
+
+<strong>
+
+V₁ / V₂ ≒ N₁ / N₂
+
+</strong>
+
+</p>
+
+<p>
+
+という関係があります。
+
+</p>
+
+<p>
+
+つまり、
+
+巻数比によって一次側と二次側の電圧比が決まります。
+
+</p>
+
+<h3>⑤ 電圧を下げると電流はどうなる？</h3>
+
+<p>
+
+同じ電力を扱う場合、
+
+電圧を下げると電流は大きくなる方向になります。
+
+</p>
+
+<p>
+
+逆に、
+
+高い電圧で送電・受電すると、
+
+同じ電力をより小さい電流で扱えます。
+
+</p>
+
+<div class="point">
+
+<strong>実務につながるポイント：</strong>
+
+電流が大きくなると、
+
+ケーブル・母線・接続部などの発熱にも
+
+注意が必要になります。
+
+</div>
+
+<h3>⑥ 変圧器の種類</h3>
+
+<h4>● 油入変圧器</h4>
+
+<p>
+
+変圧器内部を絶縁油で満たしたタイプです。
+
+絶縁と冷却の役割を油が担います。
+
+</p>
+
+<h4>● モールド変圧器</h4>
+
+<p>
+
+巻線を樹脂で固めたタイプ。
+
+油を使用しないため、
+
+油漏れの心配がありません。
+
+</p>
+
+<div class="table-wrap">
+
+<table>
+
+<tr>
+
+<th>項目</th>
+
+<th>油入</th>
+
+<th>モールド</th>
+
+</tr>
+
+<tr>
+
+<td>絶縁・冷却</td>
+
+<td>絶縁油</td>
+
+<td>樹脂・空気など</td>
+
+</tr>
+
+<tr>
+
+<td>油漏れ</td>
+
+<td>あり得る</td>
+
+<td>基本的にない</td>
+
+</tr>
+
+<tr>
+
+<td>点検</td>
+
+<td>油面・油漏れなど</td>
+
+<td>温度・異音・汚れなど</td>
+
+</tr>
+
+</table>
+
+</div>
+
+<h3>⑦ 変圧器の「温度」を見る</h3>
+
+<p>
+
+変圧器では温度が非常に重要です。
+
+</p>
+
+<p>
+
+電流が流れると、
+
+巻線などで損失が発生し、
+
+熱になります。
+
+</p>
+
+<p>
+
+そのため、
+
+負荷が大きくなると温度上昇も大きくなる傾向があります。
+
+</p>
+
+<div class="notice">
+
+<strong>見るポイント</strong>
+
+<ul>
+
+<li>現在の温度</li>
+
+<li>周囲温度</li>
+
+<li>負荷電流</li>
+
+<li>過去の温度との比較</li>
+
+<li>左右・相間などの状態差</li>
+
+</ul>
+
+</div>
+
+<h3>⑧ 「温度が高い＝即故障」ではない</h3>
+
+<p>
+
+ここは実務で重要です。
+
+</p>
+
+<p>
+
+温度が高いからといって、
+
+それだけで故障と判断するわけではありません。
+
+</p>
+
+<p>
+
+例えば、
+
+</p>
+
+<ul>
+
+<li>負荷が増えている</li>
+
+<li>周囲温度が高い</li>
+
+<li>冷却条件が変わっている</li>
+
+<li>過去と比べて急激に上昇した</li>
+
+</ul>
+
+<p>
+
+など、
+
+<strong>原因と変化をセットで見る</strong>
+
+必要があります。
+
+</p>
+
+<h3>⑨ 異音を見る</h3>
+
+<p>
+
+変圧器には、
+
+運転中にある程度の音が発生します。
+
+</p>
+
+<p>
+
+重要なのは、
+
+<strong>
+
+「普段と違う音になっていないか」
+
+</strong>
+
+ということです。
+
+</p>
+
+<div class="point">
+
+例えば、
+
+<ul>
+
+<li>音が急に大きくなった</li>
+
+<li>今までと違う音がする</li>
+
+<li>周期的な異音がある</li>
+
+<li>振動を伴っている</li>
+
+</ul>
+
+などがあれば、
+
+その変化を記録・報告し、
+
+必要な確認につなげます。
+
+</div>
+
+<h3>⑩ 振動を見る</h3>
+
+<p>
+
+変圧器では、
+
+電磁力などによってある程度の振動が発生します。
+
+</p>
+
+<p>
+
+しかし、
+
+<strong>
+
+「以前より明らかに振動が大きい」
+
+</strong>
+
+場合は、
+
+原因を確認する必要があります。
+
+</p>
+
+<h3>⑪ 油入変圧器で見るもの</h3>
+
+<p>
+
+油入変圧器では、
+
+絶縁油が重要な役割を持っています。
+
+</p>
+
+<ul>
+
+<li>油漏れ</li>
+
+<li>油面</li>
+
+<li>油の状態</li>
+
+<li>温度</li>
+
+<li>ブッシング周辺</li>
+
+<li>タンク・配管などの外観</li>
+
+</ul>
+
+<div class="warning">
+
+油漏れを発見した場合、
+
+「少しだから大丈夫」と自己判断せず、
+
+漏れている場所・量・状態などを確認して
+
+決められた手順で報告します。
+
+</div>
+
+<h3>⑫ ブッシング</h3>
+
+<p>
+
+変圧器の内部導体を、
+
+タンクなどから絶縁しながら外部へ引き出すための部分です。
+
+</p>
+
+<p>
+
+外観点検では、
+
+</p>
+
+<ul>
+
+<li>汚れ</li>
+
+<li>ひび・損傷</li>
+
+<li>変色</li>
+
+<li>異常な放電痕</li>
+
+<li>油漏れ</li>
+
+</ul>
+
+などに注意します。
+
+</p>
+
+<h3>⑬ 絶縁を見る</h3>
+
+<p>
+
+変圧器では、
+
+電気が本来流れるべき経路以外へ流れないことが重要です。
+
+</p>
+
+<p>
+
+そのため、
+
+絶縁抵抗測定などによって
+
+絶縁状態を確認します。
+
+</p>
+
+<div class="point">
+
+<strong>重要：</strong>
+
+絶縁抵抗の数値だけでなく、
+
+「過去と比べてどう変化しているか」
+
+を見ることが実務では重要です。
+
+</div>
+
+<h3>⑭ 負荷と変圧器</h3>
+
+<p>
+
+変圧器には、
+
+定格容量があります。
+
+</p>
+
+<p>
+
+その容量に対して、
+
+どれくらいの負荷をかけているのかを見ることが重要です。
+
+</p>
+
+<div class="transformer-diagram">
+
+負荷が増える
+
+<br>
+
+↓
+
+<br>
+
+電流が増える
+
+<br>
+
+↓
+
+<br>
+
+損失・発熱が増える
+
+<br>
+
+↓
+
+<br>
+
+温度上昇につながる
+
+</div>
+
+<h3>⑮ 過負荷について</h3>
+
+<p>
+
+変圧器を過負荷状態で使用すると、
+
+温度上昇などにつながり、
+
+絶縁劣化を早める可能性があります。
+
+</p>
+
+<p>
+
+そのため、
+
+「現在どれくらいの負荷で運転しているか」
+
+を把握することが重要です。
+
+</p>
+
+<h3>⑯ 変圧器の日常点検で見るもの</h3>
+
+<div class="table-wrap">
+
+<table>
+
+<tr>
+
+<th>項目</th>
+
+<th>見るポイント</th>
+
+</tr>
+
+<tr>
+
+<td>温度</td>
+
+<td>異常な上昇がないか、過去と比べてどうか</td>
+
+</tr>
+
+<tr>
+
+<td>電流</td>
+
+<td>負荷状態に異常がないか</td>
+
+</tr>
+
+<tr>
+
+<td>異音</td>
+
+<td>普段と違う音がないか</td>
+
+</tr>
+
+<tr>
+
+<td>振動</td>
+
+<td>普段より大きくないか</td>
+
+</tr>
+
+<tr>
+
+<td>油</td>
+
+<td>油漏れ・油面など</td>
+
+</tr>
+
+<tr>
+
+<td>外観</td>
+
+<td>変色・汚れ・損傷など</td>
+
+</tr>
+
+<tr>
+
+<td>絶縁</td>
+
+<td>測定値の変化</td>
+
+</tr>
+
+</table>
+
+</div>
+
+<h3>⑰ 「正常値」を覚えるだけでは不十分</h3>
+
+<p>
+
+実務で重要なのは、
+
+単純に
+
+</p>
+
+<p>
+
+「○○なら正常」
+
+</p>
+
+<p>
+
+と暗記することだけではありません。
+
+</p>
+
+<p>
+
+例えば、
+
+</p>
+
+<p>
+
+<strong>
+
+「昨日より温度が上がった」
+
+<br>
+
+「去年より絶縁抵抗が低下した」
+
+<br>
+
+「以前より音が大きくなった」
+
+</strong>
+
+</p>
+
+<p>
+
+という
+
+<strong>変化</strong>
+
+が重要な情報になります。
+
+</p>
+
+<h3>⑱ 異常を見つけたら</h3>
+
+<div class="flow">
+
+<div class="flow-box">
+
+異常発見
+
+</div>
+
+<div class="arrow">→</div>
+
+<div class="flow-box">
+
+安全確保
+
+</div>
+
+<div class="arrow">→</div>
+
+<div class="flow-box">
+
+状態確認
+
+</div>
+
+<div class="arrow">→</div>
+
+<div class="flow-box">
+
+記録
+
+</div>
+
+<div class="arrow">→</div>
+
+<div class="flow-box">
+
+報告・判断
+
+</div>
+
+</div>
+
+<div class="warning">
+
+変圧器の異常を発見したからといって、
+
+自己判断でカバーを開けたり、
+
+充電部へ接近したり、
+
+勝手に停電操作をしたりしてはいけません。
+
+</div>
+
+<h3>⑲ 主任技術者として考える</h3>
+
+<p>
+
+主任技術者の視点では、
+
+単に
+
+<strong>「変圧器を点検する」</strong>
+
+だけではありません。
+
+</p>
+
+<p>
+
+</p>
+
+<ul>
+
+<li>設備が安全に運転できているか</li>
+
+<li>異常の兆候がないか</li>
+
+<li>過去から状態が悪化していないか</li>
+
+<li>負荷状態は適切か</li>
+
+<li>点検結果をどう記録するか</li>
+
+<li>異常があった場合どう判断するか</li>
+
+<li>必要な修繕・更新につなげるべきか</li>
+
+</ul>
+
+<h3>🎯 この章のゴール</h3>
+
+<div class="point">
+
+この章を終えた時点で、
+
+現場で変圧器を見たときに、
+
+</div>
+
+<ul>
+
+<li>これは何をする機器か</li>
+
+<li>一次側・二次側はどちらか</li>
+
+<li>温度はどうか</li>
+
+<li>音・振動はどうか</li>
+
+<li>油入なら油漏れはないか</li>
+
+<li>外観に異常はないか</li>
+
+<li>負荷はどうか</li>
+
+<li>過去と比べて変化していないか</li>
+
+<li>異常ならどう報告・対応するか</li>
+
+</ul>
+
+<p>
+
+を考えられるようになることを目指します。
+
+</p>
+
+<h3>📌 電験三種とのつながり</h3>
+
+<p>
+
+電験三種で学んだ
+
+<strong>
+
+電磁誘導・巻数比・電圧・電流・損失・効率
+
+</strong>
+
+は、
+
+すべて実際の変圧器につながっています。
+
+</p>
+
+<p>
+
+試験で終わらせず、
+
+<strong>
+
+「この理論が現場のどこに現れているのか」
+
+</strong>
+
+まで理解することが、
+
+電験実務につながる勉強になります。
+
+</p>
+
+</div>
+
+</section>
+
+<!-- ==================================================
+
+     計算・公式
+
+================================================== -->
+
+<section id="formula" class="hidden">
+
+<button
+
+type="button"
+
+class="secondary"
+
+onclick="showSection('home')">
+
+← ホームへ戻る
+
+</button>
+
+<div class="card">
+
+<h2>🧮 最低限の計算・公式</h2>
+
+<p>
+
+電験実務で最低限使う計算を中心にしています。
+
+試験のような複雑な計算を目的としません。
+
+</p>
+
+<h3>① オームの法則</h3>
+
+<p>
+
+V = I × R
+
+</p>
+
+<h3>② 三相交流電力</h3>
+
+<p>
+
+P = √3 × V × I × cosφ
+
+</p>
+
+<h3>③ 電力量</h3>
+
+<p>
+
+電力量 = 電力 × 時間
+
+</p>
+
+<h3>④ 力率</h3>
+
+<p>
+
+力率 = 有効電力 ÷ 皮相電力
+
+</p>
+
+<h3>⑤ 変圧器の電圧比</h3>
+
+<p>
+
+V₁ / V₂ ≒ N₁ / N₂
+
+</p>
+
+<h3>⑥ 変圧器の電流</h3>
+
+<p>
+
+同じ電力を扱う場合、
+
+電圧が高いほど流れる電流は小さくなります。
+
+</p>
+
+<h3>⑦ 絶縁抵抗</h3>
+
+<p>
+
+絶縁抵抗は、
+
+電気が漏れにくい状態かを確認するための重要な指標です。
+
+</p>
+
+<h3>⑧ 電圧降下</h3>
+
+<p>
+
+電線には抵抗があるため、
+
+電流が流れると電線の途中で電圧が低下します。
+
+</p>
+
+<h3>⑨ 短絡電流</h3>
+
+<p>
+
+短絡が発生すると、
+
+非常に大きな電流が流れる可能性があります。
+
+そのため遮断器や保護リレーによる保護が重要になります。
+
+</p>
+
+<h3>⑩ 需要率・負荷率</h3>
+
+<p>
+
+設備容量いっぱいの電力を常に使用するわけではありません。
+
+実際の使用状況を考えるために、
+
+需要率や負荷率などの考え方があります。
+
+</p>
+
+</div>
+
+</section>
+
+<!-- ==================================================
+
+     確認問題
+
+================================================== -->
+
+<section id="quiz" class="hidden">
+
+<button
+
+type="button"
+
+class="secondary"
+
+onclick="showSection('home')">
+
+← ホームへ戻る
+
+</button>
+
+<div class="card">
+
+<h2>📝 確認問題</h2>
+
+<div id="quizProgress"></div>
+
+<div id="question"></div>
+
+<div id="choices"></div>
+
+<button
+
+id="nextButton"
+
+type="button"
+
+class="secondary hidden"
+
+onclick="nextQuestion()">
+
+次の問題 →
+
+</button>
+
+</div>
+
+</section>
+
+<!-- ==================================================
+
+     結果
+
+================================================== -->
+
+<section id="result" class="hidden">
+
+<div class="card">
+
+<h2>🎉 結果</h2>
+
+<div
+
+id="score"
+
+class="result-score">
+
+</div>
+
+<p
+
+id="resultMessage">
+
+</p>
+
+<button
+
+type="button"
+
+onclick="startQuiz()">
+
+もう一度挑戦
+
+</button>
+
+<button
+
+type="button"
+
+class="secondary"
+
+onclick="showSection('home')">
+
+ホームへ戻る
+
+</button>
+
+</div>
+
+</section>
+
+<!-- ==================================================
+
+     実務シミュレーション
+
+================================================== -->
+
+<section id="simulation" class="hidden">
+
+<button
+
+type="button"
+
+class="secondary"
+
+onclick="showSection('home')">
+
+← ホームへ戻る
+
+</button>
+
+<div class="card">
+
+<h2>🏭 実務シミュレーション</h2>
+
+<p>
+
+実際の現場を想定して、
+
+「異常を発見したらどう判断するか」
+
+を練習します。
+
+</p>
+
+<h3>ケース① モーターからいつもと違う音</h3>
+
+<p>
+
+運転中のモーターから、
+
+普段と違う音が聞こえました。
+
+どうしますか？
+
+</p>
+
+<button
+
+type="button"
+
+onclick="simulationAnswer(1)">
+
+すぐに分解して原因を調べる
+
+</button>
+
+<button
+
+type="button"
+
+onclick="simulationAnswer(2)">
+
+安全を確認し、状態を確認して報告する
+
+</button>
+
+<button
+
+type="button"
+
+onclick="simulationAnswer(3)">
+
+小さい音なので放置する
+
+</button>
+
+<button
+
+type="button"
+
+onclick="simulationAnswer(4)">
+
+いきなりブレーカーを操作する
+
+</button>
+
+<div
+
+id="simulationResult">
+
+</div>
+
+<hr>
+
+<h3>今後追加予定</h3>
+
+<ul>
+
+<li>受変電設備の異常発見</li>
+
+<li>変圧器の温度上昇</li>
+
+<li>モーターの異音・振動</li>
+
+<li>絶縁抵抗の低下</li>
+
+<li>漏電・地絡発生</li>
+
+<li>保護リレー動作</li>
+
+<li>停電作業の判断</li>
+
+<li>点検結果の記録・報告</li>
+
+</ul>
+
+</div>
+
+</section>
+
+</main>
+
+<!-- ==================================================
+
+     JavaScript
+
+================================================== -->
+
+<script>
+
+"use strict";
+
+/* =========================
+
+   セクション
+
+========================= */
+
+const sectionIds = [
+
+  "home",
+
+  "knowledge",
+
+  "knowledgeDetail",
+
+  "transformerDetail",
+
+  "formula",
+
+  "quiz",
+
+  "result",
+
+  "simulation"
+
+];
+
+function hideAll(){
+
+  sectionIds.forEach(function(id){
+
+    const element =
+
+      document.getElementById(id);
+
+    if(element){
+
+      element.classList.add("hidden");
+
+    }
+
+  });
+
+}
+
+function showSection(id){
+
+  const target =
+
+    document.getElementById(id);
+
+  if(!target){
+
+    console.error(
+
+      "表示対象がありません:",
+
+      id
+
+    );
+
+    return;
+
+  }
+
+  hideAll();
+
+  target.classList.remove("hidden");
+
+  window.scrollTo(0,0);
+
+}
+
+/* =========================
+
+   クイズデータ
+
+========================= */
+
+const quizQuestions = [
+
+{
+
+q:"断路器の主な役割は？",
+
+a:[
+
+"故障電流を遮断する",
+
+"回路を切り離し、点検などの安全を確保する",
+
+"電圧を変換する",
+
+"温度を測定する"
+
+],
+
+c:1
+
+},
+
+{
+
+q:"遮断器の役割として正しいものは？",
+
+a:[
+
+"変圧する",
+
+"事故電流などを遮断する",
+
+"油面を測る",
+
+"接地抵抗を測る"
+
+],
+
+c:1
+
+},
+
+{
+
+q:"保護リレーの役割は？",
+
+a:[
+
+"大電流を直接遮断する",
+
+"異常を検出・判断して遮断器などへ信号を出す",
+
+"電圧を変換する",
+
+"変圧器を冷却する"
+
+],
+
+c:1
+
+},
+
+{
+
+q:"CTは何のために使用する？",
+
+a:[
+
+"大電流を測定・保護に扱いやすい値へ変換する",
+
+"高電圧を直接遮断する",
+
+"温度を測定する",
+
+"振動を止める"
+
+],
+
+c:0
+
+},
+
+{
+
+q:"VTの主な役割は？",
+
+a:[
+
+"大電流を遮断する",
+
+"高電圧を測定・保護に扱いやすい電圧へ変換する",
+
+"油を冷却する",
+
+"接地する"
+
+],
+
+c:1
+
+},
+
+{
+
+q:"変圧器の役割は？",
+
+a:[
+
+"電圧を別の電圧へ変換する",
+
+"電流を必ずゼロにする",
+
+"接地抵抗を測定する",
+
+"遮断器を操作する"
+
+],
+
+c:0
+
+},
+
+{
+
+q:"変圧器の点検で重要なものは？",
+
+a:[
+
+"温度・異音・振動・外観など",
+
+"塗装色だけ",
+
+"名前だけ",
+
+"周囲の天気だけ"
+
+],
+
+c:0
+
+},
+
+{
+
+q:"変圧器の温度が上昇したとき、最初に考えるべきことは？",
+
+a:[
+
+"必ず故障と決めつける",
+
+"負荷や周囲温度、過去の状態などを確認する",
+
+"すぐ分解する",
+
+"何も確認しない"
+
+],
+
+c:1
+
+},
+
+{
+
+q:"油入変圧器で確認したいものは？",
+
+a:[
+
+"油漏れ・油面など",
+
+"タイヤの空気圧",
+
+"燃料タンク",
+
+"ブレーキ"
+
+],
+
+c:0
+
+},
+
+{
+
+q:"実務で重要な「状態監視」の考え方は？",
+
+a:[
+
+"現在値だけを見る",
+
+"過去の値との変化を見る",
+
+"数値を記録しない",
+
+"異常音を無視する"
+
+],
+
+c:1
+
+},
+
+{
+
+q:"三相交流電力の式は？",
+
+a:[
+
+"P=VI",
+
+"P=√3VIcosφ",
+
+"P=IR",
+
+"P=V/R"
+
+],
+
+c:1
+
+},
+
+{
+
+q:"異常を発見したときの基本は？",
+
+a:[
+
+"すぐ分解する",
+
+"勝手に操作する",
+
+"安全確保・確認・報告を行う",
+
+"放置する"
+
+],
+
+c:2
+
+}
+
+];
+
+let quizList=[];
+
+let quizIndex=0;
+
+let quizScore=0;
+
+let answered=false;
+
+/* =========================
+
+   シャッフル
+
+========================= */
+
+function shuffle(array){
+
+  const result =
+
+    array.slice();
+
+  for(
+
+    let i=result.length-1;
+
+    i>0;
+
+    i--
+
+  ){
+
+    const j =
+
+      Math.floor(
+
+        Math.random()*(i+1)
+
+      );
+
+    [
+
+      result[i],
+
+      result[j]
+
+    ] =
+
+    [
+
+      result[j],
+
+      result[i]
+
+    ];
+
+  }
+
+  return result;
+
+}
+
+/* =========================
+
+   クイズ開始
+
+========================= */
+
+function startQuiz(){
+
+  quizList =
+
+    shuffle(
+
+      quizQuestions
+
+    ).slice(0,10);
+
+  quizIndex=0;
+
+  quizScore=0;
+
+  answered=false;
+
+  showSection("quiz");
+
+  showQuestion();
+
+}
+
+/* =========================
+
+   問題表示
+
+========================= */
+
+function showQuestion(){
+
+  const item =
+
+    quizList[quizIndex];
+
+  answered=false;
+
+  document.getElementById(
+
+    "quizProgress"
+
+  ).textContent=
+
+    "第 "+
+
+    (quizIndex+1)+
+
+    " 問 / "+
+
+    quizList.length+
+
+    " 問";
+
+  document.getElementById(
+
+    "question"
+
+  ).innerHTML=
+
+    "<h3>"+
+
+    escapeHtml(item.q)+
+
+    "</h3>";
+
+  const choices =
+
+    document.getElementById(
+
+      "choices"
+
+    );
+
+  choices.innerHTML="";
+
+  const choiceArray =
+
+    item.a.map(
+
+      function(text,index){
+
+        return {
+
+          text:text,
+
+          index:index
+
+        };
+
+      }
+
+    );
+
+  shuffle(
+
+    choiceArray
+
+  ).forEach(
+
+    function(choice){
+
+      const button =
+
+        document.createElement(
+
+          "button"
+
+        );
+
+      button.type="button";
+
+      button.className=
+
+        "choice-button";
+
+      button.textContent=
+
+        choice.text;
+
+      button.addEventListener(
+
+        "click",
+
+        function(){
+
+          answer(
+
+            choice.index,
+
+            button
+
+          );
+
+        }
+
+      );
+
+      choices.appendChild(
+
+        button
+
+      );
+
+    }
+
+  );
+
+  document.getElementById(
+
+    "nextButton"
+
+  ).classList.add(
+
+    "hidden"
+
+  );
+
+}
+
+/* =========================
+
+   回答
+
+========================= */
+
+function answer(
+
+  choiceIndex,
+
+  clickedButton
+
+){
+
+  if(answered){
+
+    return;
+
+  }
+
+  answered=true;
+
+  const item =
+
+    quizList[quizIndex];
+
+  const buttons =
+
+    document.querySelectorAll(
+
+      "#choices button"
+
+    );
+
+  buttons.forEach(
+
+    function(button){
+
+      button.disabled=true;
+
+    }
+
+  );
+
+  if(
+
+    choiceIndex===item.c
+
+  ){
+
+    quizScore++;
+
+    clickedButton.classList.add(
+
+      "correct"
+
+    );
+
+  }
+
+  else{
+
+    clickedButton.classList.add(
+
+      "wrong"
+
+    );
+
+    buttons.forEach(
+
+      function(button){
+
+        if(
+
+          button.textContent===
+
+          item.a[item.c]
+
+        ){
+
+          button.classList.add(
+
+            "correct"
+
+          );
+
+        }
+
+      }
+
+    );
+
+  }
+
+  document.getElementById(
+
+    "nextButton"
+
+  ).classList.remove(
+
+    "hidden"
+
+  );
+
+}
+
+/* =========================
+
+   次の問題
+
+========================= */
+
+function nextQuestion(){
+
+  if(!answered){
+
+    return;
+
+  }
+
+  quizIndex++;
+
+  if(
+
+    quizIndex>=quizList.length
+
+  ){
+
+    showResult();
+
+  }
+
+  else{
+
+    showQuestion();
+
+  }
+
+}
+
+/* =========================
+
+   結果
+
+========================= */
+
+function showResult(){
+
+  showSection("result");
+
+  document.getElementById(
+
+    "score"
+
+  ).textContent=
+
+    quizScore+
+
+    " / "+
+
+    quizList.length+
+
+    " 問正解";
+
+  let message;
+
+  const rate=
+
+    quizScore/
+
+    quizList.length;
+
+  if(rate>=0.9){
+
+    message=
+
+      "かなり理解できています。実務で説明できる状態を目指しましょう。";
+
+  }
+
+  else if(rate>=0.7){
+
+    message=
+
+      "良い理解です。間違えた問題を知識編で復習しましょう。";
+
+  }
+
+  else if(rate>=0.5){
+
+    message=
+
+      "基本はできています。設備の役割をもう一度整理してみましょう。";
+
+  }
+
+  else{
+
+    message=
+
+      "まずは知識編を読みながら、設備の役割を整理していきましょう。";
+
+  }
+
+  document.getElementById(
+
+    "resultMessage"
+
+  ).textContent=
+
+    message;
+
+}
+
+/* =========================
+
+   シミュレーション
+
+========================= */
+
+function simulationAnswer(choice){
+
+  const result =
+
+    document.getElementById(
+
+      "simulationResult"
+
+    );
+
+  if(choice===2){
+
+    result.innerHTML=
+
+      '<div class="point">'+
+
+      '<strong>正解です。</strong><br>'+
+
+      'まず安全を確保し、異音の状態や運転状況を確認し、'+
+
+      '決められた手順で報告します。'+
+
+      '</div>';
+
+  }
+
+  else{
+
+    result.innerHTML=
+
+      '<div class="warning">'+
+
+      '<strong>まず安全確保と状況確認です。</strong><br>'+
+
+      '勝手に分解・操作・放置するのではなく、'+
+
+      '異常の状態を確認して報告するのが基本です。'+
+
+      '</div>';
+
+  }
+
+}
+
+/* =========================
+
+   HTMLエスケープ
+
+========================= */
+
+function escapeHtml(text){
+
+  return String(text).replace(
+
+    /[&<>"']/g,
+
+    function(character){
+
+      const map={
+
+        "&":"&amp;",
+
+        "<":"&lt;",
+
+        ">":"&gt;",
+
+        '"':"&quot;",
+
+        "'":"&#039;"
+
+      };
+
+      return map[character];
+
+    }
+
+  );
+
+}
+
+/* =========================
+
+   初期表示
+
+========================= */
+
+showSection("home");
+
+</script>
+
+</body>
+
+</html>
